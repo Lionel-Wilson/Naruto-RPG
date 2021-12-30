@@ -1,0 +1,27 @@
+make sure to go back through the code look for refrenced code and show how you made it different.
+
+Links to references:
+
+'Pygame Tutorial #1 - Basic Movement and Key Presses' Youtube Video by 'Tech with Tim':
+https://www.youtube.com/watch?v=i6xMBig-pP4
+
+'Pygame Tutorial #2 - Jumping and Boundaries' Youtube Video by 'Tech with Tim':
+https://www.youtube.com/watch?v=2-DNswzCkqk
+
+'Pygame Tutorial #3 - Character Animation & Sprites' Youtube Video by 'Tech with Tim'
+https://www.youtube.com/watch?v=UdsNBIzsmlI
+
+'Sprite sheet Wiki'
+https://www.pygame.org/wiki/Spritesheet
+
+'Pygame Menu System Tutorial Part 1: Game Loops and Structure'
+https://www.youtube.com/watch?v=a5JWrd7Y_14
+
+'Pygame Menu System Tutorial Part 2: Building the Menu and States'
+https://www.youtube.com/watch?v=bmRFi7-gy5Y
+
+
+Pygame Game States Tutorial: Creating an In-game Menu using States
+'https://www.youtube.com/watch?v=b_DkQrJxpck'
+
+
