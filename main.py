@@ -81,7 +81,7 @@ Stage_6_final = maps('stages/Stage 6 - Sasuke vs naruto final.png',None,224,800,
 
 #objects of this class will be drawn when not in battle.Aka platformer.
 class Player_Platform_Mode:
-    def __init__(self, name = 'Naruto',hp = 3,max_hp = 3,x_pos=100,y_pos = 310,width = 47,height = 63,speed=10,runcount = 0,left = False ,right =False ,jumping =False,jumpcount= 10): 
+    def __init__(self, name = 'Naruto',hp = 3,max_hp = 3,x_pos=100,y_pos = 310,width = 40,height = 63,speed=10,runcount = 0,left = False ,right =False ,jumping =False,jumpcount= 10): 
        #CHARACTER PLATFORM STATS 
        self.name,self.hp,self.max_hp = name,hp,max_hp #If we included projectiles when naruto is hit 3 times he dies in the platform mode and you start the game again
        self.alive = True   
@@ -420,6 +420,8 @@ class Player_Battle_Mode(Player_Platform_Mode):
         
     #DRAWS CHARACTERS ATTACKS AND MOVEMENTS IN BATTLE
     def draw_battle(self,enemy):
+        naruto_sa1_width = 95
+        naruto_sa1_height = 107
         if self.chakra_charging:
             if self.framecount + 1 >= ((len(self.chakra_charge_animation))*4):
                 self.framecount = 0
@@ -457,7 +459,7 @@ class Player_Battle_Mode(Player_Platform_Mode):
                         self.turn = False
                         enemy.turn = True
                         return
-                    screen.blit(self.sa1_animation[self.framecount//3],(enemy.x_pos-self.width,self.y_pos))
+                    screen.blit(self.sa1_animation[self.framecount//3],((enemy.x_pos-naruto_sa1_width),enemy.y_pos-(naruto_sa1_height-enemy.height)))
                     self.framecount+=1
                     return
                 
@@ -486,7 +488,7 @@ class Player_Battle_Mode(Player_Platform_Mode):
                     self.turn = False
                     enemy.turn = True
                     return
-                screen.blit(self.sa1_animation[self.framecount//3],((enemy.x_pos-enemy.width),enemy.y_pos))
+                screen.blit(self.sa1_animation[self.framecount//3],((enemy.x_pos-naruto_sa1_width),enemy.y_pos-(naruto_sa1_height-enemy.height)))
                 self.framecount+=1
                 return
         else:
@@ -542,7 +544,7 @@ Naruto_battle = Player_Battle_Mode()
 
 
 class Platform_NPC(): #Any characters that are not the main characters will be made from this class when in platform mode.
-    def __init__(self,name = 'Kakashi',x_pos = 300,y_pos = 300,width = 26,height = 38,speed = 5 ):
+    def __init__(self,name = 'Kakashi',x_pos = 300,y_pos = 300,width = 26,height = 70,speed = 5 ):
        self.name=  name
        self.x_pos = x_pos 
        self.y_pos = y_pos
@@ -599,6 +601,8 @@ class Battle_NPC(Platform_NPC):
        
        
     def draw_NPC_battle(self,enemy ):
+        kakashi_sa1_height = 82
+        kakashi_sa1_height = 40
         #CHECKS IF PLAYER IS ATTACKING OR RESTORING ENERGY
         if enemy.attacking or enemy.chakra_charging:
             self.attacking = False
@@ -631,7 +635,7 @@ class Battle_NPC(Platform_NPC):
                         self.turn = False
                         enemy.turn = True
                         return
-                    screen.blit(self.sa1_animation[self.framecount//3],(enemy.x_pos+enemy.width,self.y_pos))
+                    screen.blit(self.sa1_animation[self.framecount//3],(enemy.x_pos+enemy.width,self.y_pos-(self.height-enemy.height)))
                     self.framecount+=1
                     return
                 
@@ -660,7 +664,7 @@ class Battle_NPC(Platform_NPC):
                     self.turn = False
                     enemy.turn = True
                     return
-                screen.blit(self.sa1_animation[self.framecount//3],((enemy.x_pos+enemy.width),enemy.y_pos))
+                screen.blit(self.sa1_animation[self.framecount//3],(enemy.x_pos+enemy.width,self.y_pos-(self.height-enemy.height)))
                 self.framecount+=1
                 return
 
