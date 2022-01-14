@@ -1,3 +1,3 @@
 # My Naruto RPG
 
-Hey guys its me **Lionel**, with my sick game _Naruto rpg_
+Hey guys its me **Lionel**, with my awesome game _Naruto rpg_
